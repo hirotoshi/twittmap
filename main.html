@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <meta http-equiv="content-style-type" content="text/css">
+  <link href="/stylesheets/twitmap.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="http://map.yahooapis.jp/MapsService/js/V3/?appid={{ appid }}" ></script>
+  <title>{{user.name}}くん</title>
+</head>
+<body>
+<div id="contener">
+<div id="header">
+  <h1>地図の場所をつぶやく、{{user.name}}くん</h1>
+  <img src="{{user.profile_image_url}}" />
+  <h2>
+    <a href="http://twitter.com/{{ user.screen_name }}">@{{user.screen_name}}</a>をフォローして、地図の場所を教えてもらおう
+  </h2>
+</div>
+<div id="main">
+
+  <div id="block">
+  	<ul>
+    {% for status in list %}
+    	{% if status.map %}
+        <li onClick="location='{{ status.loc_url }}'" class="map" style="background:url({{ status.map }})">	
+         <div class="aboutovermap">
+         	<p>
+         	<a href="http://twitter.com/{{ status.user_screen_name }}">
+           		<img src="{{status.user_profile_image_url}}" />
+         	</a>
+         	</p><p>
+         	{{ status.text }}
+         	</p>
+          	<p>
+          	<a href="http://twitter.com/{{ user.screen_name }}">
+           	 <img src="{{ user.profile_image_url }}" />
+          	</a>
+          	</p><p>
+          		{{ status.reply }}
+          	</p>
+        </div>
+    	</li>
+        {% else %}
+        <li class="aboutmap" >
+         <p>
+         <a href="http://twitter.com/{{ status.user_screen_name }}">
+           <img src="{{status.user_profile_image_url}}" />
+         </a>
+         </p><p>
+         {{ status.text }}
+         </p>
+          <p>
+          <a href="http://twitter.com/{{ user.screen_name }}">
+            <img src="{{ user.profile_image_url }}" />
+          </a>
+          </p><p>
+          {{ status.reply }}
+          </p>
+        </li>
+        {% endif %}
+       {% endfor %}
+    </ul>
+  </div>
+</div>
+<div id="footer">
+  <address>
+    Produced By:<a href="http://twitter.com/hori_suke_9">@hori_suke_9</a><br />
+    Developed By:<a href="http://twitter.com/orochon">@orochon</a> <br />
+    Designed By:<a href="http://twitter.com/ukitazume">@ukitazume</a> <br />
+    Powered By:<br />
+    <a href="http://developer.yahoo.co.jp/about">Yahoo! JAPAN</a><br />
+    <a href="http://code.google.com/apis/maps/">Google Maps API</a><br />
+    <a href="http://geodosu.com/">ジオどす</a><br />
+    <a href="http://convivial-web.com/blog/">convivial-weblog</a>
+  </address>
+</div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-378291-11");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* top level */
+* {
+	margin: 0px;
+}
+
+a{ 
+	color:#FFFFFF;
+	text-decoration: none;
+}
+
+p{
+	font-size:12px;
+}
+
+img{
+	border:0 none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+body {
+	background: #CC0000 url(redmap.png);
+}
+
+
+/* local */
+div#main h3 {
+	margin: 10px 0 20px 50px;
+	background-color: #000000;
+	color: #FFFFFF;
+	width: 400px;
+	padding: 5px;
+}
+
+div#contener {
+	height: 100%;
+}
+
+div#header{
+	font-size: 9px;
+	color:#999999;
+	width: 420px;
+	background-color: #000000;
+	margin: 0px 0 20px 50px;
+	padding: 20px;
+}
+
+div#header img{
+	float:right;
+	margin-top: -27px;
+}
+
+div#block 
+{
+	border: thin;
+	
+}
+
+div#block ul{
+	list-style-type: none;
+}
+
+li.aboutmap{
+	background:#A60000;
+	margin: 10px;
+	padding: 10px;
+	font-size:12px;
+	width: 200px;
+	height: 300px;
+	overflow: hidden;
+	float: left;
+	color: #fff;
+}
+
+div.aboutovermap{
+	background:#A60000;
+	filter:alpha(opacity=85); /*IE*/
+	-moz-opacity:0.85; /*FF*/
+	opacity:0.85;
+	width: 440px;
+	color: #FFFFFF;
+	margin-top: 35px;
+	padding: 10px;
+
+}
+
+div.aboutovermap:hover{
+	filter:alpha(opacity=0); /*IE*/
+	-moz-opacity:0; /*FF*/
+	opacity:0;
+
+}
+
+li.map{
+	background:#990000;
+	margin: 10px;
+	padding: 0px;
+	height: 320px;
+	width: 460px;
+	float: left;
+	cursor:pointer;
+}
+
+li.map a{
+	color: #000000;
+	font-weight:bold;
+}
+
+div#footer{
+	background-color: #000000;
+	clear: both;
+	font-size: 9px;
+	color:#999999;
+	width: 400px;
+	float:right;
+	margin: 70px;
+	padding: 20px;
+}

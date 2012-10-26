@@ -1,0 +1,18 @@
+
+#your twitter account http://twitter.com
+twitter_username  : ''
+twitter_password  : ''
+#your yjdn account http://developer.yahoo.co.jp/
+yjdn_appid        : ''
+#your google api key
+google_key        : ''
+geodosu_key       : ''
+
+#message format
+success_message   : {
+  yahoo : '@%s %sの地図はこちら。 %s' ,
+  google: '@%s %sの地図が見つかりました。 %s',
+  geodosu: '@%s %sの地図はこちらどすよ。 %s',
+}
+fail_message      : '@%s ごめんない、%sの位置がわかりません。'
+

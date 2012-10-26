@@ -1,0 +1,13 @@
+application: twittmap
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /cron
+  script: cron.py
+  login: admin
+- url: /stylesheets
+  static_dir: stylesheets
+- url: /.*
+  script: main.py
